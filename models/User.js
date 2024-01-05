@@ -12,12 +12,13 @@ class User extends Model {
 //   `name` varchar(255) NOT NULL,
 //   `email` varchar(255) NOT NULL,
 //   `password` varchar(255) NOT NULL,
-//   PRIMARY KEY (`user_id`),
+//   PRIMARY KEY (`userid`),
 //   UNIQUE KEY `email` (`email`)
 
 User.init(
   {
-    user_id: {
+    //To be consistent with sqlca.userid, userid is used instead of user_id
+    userid: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

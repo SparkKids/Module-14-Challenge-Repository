@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Why Full Stack Development is so important",
+    "contents": "Full Stack Development allows the developer to view system development at a high level. This allows proped design decisions to be made.",
+    "date_created": "11/01/2023 8:00 am",
+    "user_id": 1
+  },
+  {
+    "title": "Technologies for MVC apps.",
+    "contents": "The following apps/technologies are needed at a minimum: HTML, JavaScript, and relational databases.",
+    "date_created": "11/02/2023 1:00 pm",
+    "user_id": 2
+  },
+  {
+    "title": "Why a full-stack developer needs a good breakfast",
+    "contents": "The human brain needs protein! A breakfast high in protein is essential for a developers productivity.",
+    "date_created": "12/01/2023 9:43 am",
+    "user_id": 1
+  }
+]

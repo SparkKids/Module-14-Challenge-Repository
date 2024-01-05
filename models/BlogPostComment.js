@@ -2,28 +2,30 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // CREATE TABLE `blog_post` (
-//   `blog_post_id` int NOT NULL AUTO_INCREMENT,
+//   `post_id` int NOT NULL AUTO_INCREMENT,
 //   `title` varchar(40) NOT NULL,
 //   `contents` varchar(2000) DEFAULT NULL,
 //   `creator_username` varchar(40) NOT NULL,
 //   `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 //   PRIMARY KEY (`post_id`)
   
-class BlogPost extends Model {};
+class BlogPostComment extends Model {};
 
-BlogPost.init(
+BlogPostComment.init(
   {
-    blog_post_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    contents: {
+    blog_post_comment_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      blog_post_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'BlogPost',
+          key: 'blog_post_id',
+        },
+          comment: {
       type: DataTypes.STRING(1235),
     },
     date_created: {
@@ -39,13 +41,14 @@ BlogPost.init(
       },
     },
   },
-  {
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'BlogPost', // This is the model name in CamelCase
-    tableName: 'blog_post' // This is the custom table name in snake_case  }
+    modelName: 'BlogPostComment', // This is the model name in CamelCase
+    tableName: 'blog_post_comment' // This is the custom table name in snake_case  }
   });
 
-module.exports = BlogPost;
+module.exports = BlogPostComment;

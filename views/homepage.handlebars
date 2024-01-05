@@ -1,0 +1,17 @@
+<!-- Loop over each object in the blogPosts array -->
+{{#each blogPosts as |blogPost| }}
+<div id="blogPostRow" data-blogPostId="{{blogPost.blog_post_id}}" class="container">
+  <div class="row mb-4 blogPost-title">
+    <h4>
+      {{blogPost.title}}
+    </h4>
+    <p class="push-right">Created by {{User.name}} on {{format_date blogPost.date_created}}</p>
+
+  </div> <!-- <div class="row mb-4 blogPost-title"> -->
+  <div class="row mb-4 blogPost">
+    <p>
+      {{blogPost.contents}}
+    </p>
+  </div><!-- <div class="row mb-4 blogPost"> -->
+</div>
+{{/each}}
